@@ -1,0 +1,420 @@
+/* ===== Global Styles ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: "Segoe UI", Arial, sans-serif;
+background: linear-gradient(135deg, #eef2f7, #f8fafc, #e8eef5);
+color: #1f2937;
+min-height: 100vh;
+}
+
+#root {
+min-height: 100vh;
+}
+
+#root > div {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+
+/* ===== Header ===== */
+header {
+background: linear-gradient(120deg, #131921, #232f3e, #37475a);
+color: #ffffff;
+text-align: center;
+padding: 30px 20px;
+border-bottom: 5px solid #ff9900;
+box-shadow: 0 5px 20px rgba(19, 25, 33, 0.2);
+}
+
+header h1 {
+font-size: clamp(26px, 4vw, 38px);
+font-weight: 800;
+letter-spacing: 1px;
+color: #ffffff;
+}
+
+header h1::after {
+content: "";
+display: block;
+width: 90px;
+height: 4px;
+background: #ff9900;
+border-radius: 10px;
+margin: 12px auto 0;
+}
+
+/* ===== Main Content ===== */
+main {
+flex: 1;
+width: 100%;
+padding: 30px 18px;
+}
+
+/* ===== Show/Hide Product Button ===== */
+#root > div > button {
+align-self: center;
+margin-top: 28px;
+background: #232f3e;
+color: #ffffff;
+padding: 13px 24px;
+border: 2px solid #ff9900;
+border-radius: 10px;
+font-size: 14px;
+font-weight: 700;
+cursor: pointer;
+transition: all 0.25s ease;
+}
+
+#root > div > button:hover {
+background: #ff9900;
+color: #131921;
+transform: translateY(-2px);
+box-shadow: 0 6px 15px rgba(255, 153, 0, 0.25);
+}
+
+/* ===== Product Card ===== */
+.product-card {
+position: relative;
+overflow: hidden;
+background: rgba(255, 255, 255, 0.97);
+width: min(100%, 440px);
+margin: 35px auto;
+padding: 32px 28px;
+border: 1px solid #e2e8f0;
+border-radius: 22px;
+text-align: left;
+box-shadow: 0 15px 40px rgba(35, 47, 62, 0.12);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 22px 48px rgba(35, 47, 62, 0.18);
+}
+
+/* ===== Product Badge ===== */
+.product-card::before {
+content: "BEST SELLER";
+display: inline-block;
+background: #fff3d6;
+color: #925400;
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 1.2px;
+padding: 7px 12px;
+border-radius: 20px;
+margin-bottom: 18px;
+}
+
+/* ===== Product Name ===== */
+.product-card h2 {
+font-size: 27px;
+color: #182536;
+margin-bottom: 10px;
+font-weight: 800;
+}
+
+/* ===== Product Details ===== */
+.product-card p {
+font-size: 15px;
+line-height: 1.7;
+color: #526174;
+margin: 10px 0;
+}
+
+.product-card p:first-of-type {
+font-size: 25px;
+font-weight: 800;
+color: #087443;
+margin-bottom: 22px;
+}
+
+/* ===== Labels ===== */
+.product-card label {
+display: block;
+margin-top: 20px;
+margin-bottom: 8px;
+font-size: 14px;
+font-weight: 700;
+color: #263548;
+}
+
+/* ===== Color Dropdown and City Input ===== */
+.product-card select,
+.product-card input {
+width: 100%;
+padding: 13px 14px;
+border: 1px solid #cbd5e1;
+border-radius: 10px;
+background-color: #f8fafc;
+color: #1f2937;
+font-size: 15px;
+font-family: inherit;
+outline: none;
+transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card select:focus,
+.product-card input:focus {
+border-color: #ff9900;
+box-shadow: 0 0 0 4px rgba(255, 153, 0, 0.15);
+background-color: #ffffff;
+}
+
+/* ===== Quantity Display ===== */
+.product-card p:nth-of-type(4) {
+background: #f1f5f9;
+border-radius: 10px;
+padding: 12px;
+color: #182536;
+font-weight: 700;
+margin-top: 22px;
+}
+
+/* ===== Buttons ===== */
+button {
+border: none;
+border-radius: 10px;
+padding: 12px 17px;
+margin: 7px 5px 7px 0;
+font-family: inherit;
+font-size: 14px;
+font-weight: 700;
+background: #ff9900;
+color: #17202b;
+cursor: pointer;
+box-shadow: 0 4px 10px rgba(255, 153, 0, 0.15);
+transition: all 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+background: #f7b23b;
+transform: translateY(-2px);
+box-shadow: 0 7px 15px rgba(255, 153, 0, 0.25);
+}
+
+button:active:not(:disabled) {
+transform: scale(0.97);
+}
+
+button:disabled {
+background: #d8dee7;
+color: #8792a2;
+box-shadow: none;
+cursor: not-allowed;
+}
+
+/* ===== Cart Total ===== */
+.product-card h3 {
+margin-top: 25px;
+padding: 18px;
+border-radius: 12px;
+background: linear-gradient(120deg, #fff4dc, #ffebbd);
+color: #754200;
+border: 1px solid #ffda8a;
+font-size: 23px;
+font-weight: 800;
+}
+
+/* ===== Cart Status ===== */
+.product-card h3 + p {
+text-align: center;
+margin-top: 16px;
+padding: 12px;
+border-radius: 10px;
+background: #e8f7ee;
+color: #167346;
+font-weight: 700;
+}
+
+/* ===== Footer ===== */
+footer {
+margin-top: auto;
+background: #131921;
+color: #e2e8f0;
+text-align: center;
+padding: 23px 15px;
+border-top: 4px solid #ff9900;
+font-size: 14px;
+letter-spacing: 0.4px;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 480px) {
+header {
+padding: 24px 12px;
+}
+
+.product-card {
+padding: 25px 18px;
+margin: 25px auto;
+border-radius: 17px;
+}
+
+.product-card h2 {
+font-size: 23px;
+}
+
+button {
+padding: 11px 12px;
+font-size: 13px;
+}
+
+.product-card h3 {
+font-size: 21px;
+}
+}
+/* ===== Cart Button Layout ===== */
+.cart-buttons {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 15px;
+}
+
+.cart-buttons button {
+margin: 0;
+}
+
+/* ===== Cart Status Variants ===== */
+.product-card .cart-empty {
+background: #f1f5f9;
+color: #64748b;
+text-align: center;
+padding: 12px;
+border-radius: 10px;
+font-weight: 700;
+}
+
+.product-card .cart-success {
+background: #e8f7ee;
+color: #167346;
+text-align: center;
+padding: 12px;
+border-radius: 10px;
+font-weight: 700;
+}
+/* ===== App Layout ===== */
+.app-container {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+
+/* ===== All Four Controls Stay Visible ===== */
+.controls {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 10px;
+padding: 25px 15px 0;
+}
+
+.controls button {
+margin: 0;
+}
+
+.controls button:disabled {
+opacity: 0.5;
+cursor: not-allowed;
+}
+
+/* ===== Product Icon ===== */
+.product-icon {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 110px;
+height: 110px;
+margin: 10px auto 20px;
+background: linear-gradient(135deg, #eef2f7, #fff1d6);
+border-radius: 50%;
+font-size: 55px;
+}
+
+/* ===== Product Badge ===== */
+.product-badge {
+display: table;
+margin: 0 auto 15px;
+padding: 7px 13px;
+border-radius: 20px;
+background: #fff0cf;
+color: #855000;
+font-size: 11px;
+font-weight: 800;
+letter-spacing: 1px;
+}
+
+/* ===== Product Price ===== */
+.product-card .price {
+color: #087443;
+font-size: 28px;
+font-weight: 800;
+margin: 15px 0;
+}
+
+/* ===== Cart Summary ===== */
+.cart-summary {
+margin-top: 25px;
+padding: 18px;
+border-radius: 14px;
+background: #f3f6fa;
+border: 1px solid #e0e6ee;
+}
+
+.cart-summary p {
+font-weight: 600;
+}
+
+.cart-summary h3 {
+margin-top: 15px;
+}
+
+.product-card .cart-summary .cart-empty {
+margin-top: 15px;
+background: #e9eef5;
+color: #526174;
+text-align: center;
+padding: 12px;
+border-radius: 9px;
+}
+
+.product-card .cart-summary .cart-success {
+margin-top: 15px;
+background: #e5f7ec;
+color: #167346;
+text-align: center;
+padding: 12px;
+border-radius: 9px;
+}
+
+/* ===== Footer Layout ===== */
+footer p + p {
+margin-top: 7px;
+font-size: 12px;
+color: #cbd5e1;
+}
+
+/* ===== Mobile Layout ===== */
+@media (max-width: 480px) {
+.controls {
+padding: 20px 12px 0;
+}
+
+.controls button {
+flex: 1 1 40%;
+}
+
+.product-icon {
+width: 90px;
+height: 90px;
+font-size: 45px;
+}
+}
